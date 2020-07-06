@@ -1,0 +1,10 @@
+1. In the search page, we can search people by the the name, email and phone number. 
+2. I tried to inject a sql command in the search bar %'or '0'='0 which gave me all the profiles. So, I concluded that this search bar is vulnerable to sql injection. Although it removes words like select,or,union,and.
+3. So instead of directly giving the above command I gave %'oorr '0'='0.
+4. To find the database name the next is to extract the exact number of columns present in the table.
+5. For this I injected sql command: ' oorrdunioner by 3 # which gave all the profiles in the result.
+6. I injected this command with number ranging from 3 to 15.
+7. Upto 14 I received all the profiles in the result but in 15 I got no results.
+8. This made me sure that there are 14 columns in the table.
+9. By injecting this command I got the Database name: ' ununionion selselectect  null,database(),null,null,null,null,null,null,null,null,null,null,null,null #
+10. Changing the position of database() will show no results.

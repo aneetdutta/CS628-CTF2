@@ -1,0 +1,5 @@
+the maximum penalty under the Indian IT Act, 2000 for "Hacking with computer system" and "Securing access or attempting to secure access to a protected system :500000.
+
+The system can be made secure by sanitizing the input in the search field and password field where sql injection vulnerabilty exists.
+The url should be sanitized each time and the path should not be allowed to change to prevent local file inclusion.
+For preventing remote file inclusion the file uploaded must be checked with its content as well as extension of the file.

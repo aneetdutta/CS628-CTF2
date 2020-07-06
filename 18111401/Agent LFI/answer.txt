@@ -1,0 +1,13 @@
+1. By local file inclusion it is understood that a file from the server must be accessed inorder to get the flag.
+2. Using the hint provided I came to know that the name of the file that must be accessed is gRaB.php.
+3. Then I tried different path in the URL but all are redirecting me to the home page.
+4. Then I found a path in the server https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/130/image.jpeg by uploading a picture from the settings page which is the only page which allows us to upload file.
+5. Then I tried different path to access the gRaB.php file like https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/130/gRaB.php, https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/gRaB.php, https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/gRaB.php, https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/gRaB.php.
+6. The first link give page not found error, the rest gives access to a file named gRaB.php where it is written "Try Harder" or a blank web page is loaded.
+7. Then I used directory buster tool to find the paths that can be exploited in order to get the flag.
+8  A new path is discovered which contains the required file https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/22/gRaB.php
+9. When this file is accessed the flag is discovered.
+10. The number 130 in the path https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/130/gRaB.php represents my profile id and the number 22 in the path https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/INC/UPLOAD/THUMBS/22/gRaB.php represents the profile id of the Agent LFI.
+11. Sql command injected to find the id of the Agent LFI:
+	a) ' uunionnion selselectect null,name,null,null,null,null,null,null,null,null,null,null,null,null from student# (find the names of all the student where the Agent LFI entity is found)
+        b) ' uunionnion selselectect null,id,null,null,null,null,null,null,null,null,null,null,null,null from student whwhereere name='Agent LFI'#

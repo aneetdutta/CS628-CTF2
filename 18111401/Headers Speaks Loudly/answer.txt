@@ -1,0 +1,12 @@
+1. The page related to the problem is found out by clicking apps button followed by headers button.
+2. Visiting this page showed me a message that "Only admins are allowed here.Get Lost!".
+3. This is a hint that I have to modify the header and set admin=1 in the cookies field.
+4. Then again a message poped up that "You can view me only from a specially made browser for this class! It's name is 'CS628A'."
+5. This is a hint that I have to modify the header and set Useragent to be CS628A.
+6. Then again a message poped up that "Only people (requests) coming from android.cse.iitk.ac.in will be allowed!"
+7. This is a hint that I have to modify the header and set referer to be  https://android.cse.iitk.ac.in:9012/uzwZfBZQ0g/?p=apps&f=2
+8. Then again a message poped up that "Only people who are concerned for their privacy will be given access. Turn on Do_Not_Tracking!"
+9. So, in my browser, I went to security and privacy setting and turn on the Do Not Tracking option to be always.
+10. Then again a message poped up that "I'm hungry! Can I get a 'perma-cookie' or 'supercookie' to eat!"
+11. Now, to set super-cookie I added X-UIDH field in the header to be random string.
+12. Doing all of the above steps sequentially I got the flag from the Header of the response received from the server in the x-http-flag: cs628a{61eaa8e06c7dcd76b1005560408919c9}.

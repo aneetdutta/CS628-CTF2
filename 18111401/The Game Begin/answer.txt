@@ -1,0 +1,7 @@
+1. In the problem we are asked to find the password corresponding to my username.
+2. So, in the login page we tried to run different commands in the password field.
+3. At first, when I have done SQL injection in the password field using the command:  %'or '0'='0
+4. This allowed me to login to the server but I landed up in someone else's account(Naman Narang).
+5. This made me sure that password field in the login page is vulnerable to sql injection and is the correct place to do sql injection, but I have to write my query corresponding to my email.
+6. SQL command similar to the previous one is injected, but a constraint about my email is mentioned in the sql query which allowed me to login to my account and the flag is present in the bio.
+Command: %'or email='aneetk@iitk.ac.in

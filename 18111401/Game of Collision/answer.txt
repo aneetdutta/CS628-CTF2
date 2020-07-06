@@ -1,0 +1,30 @@
+if(Checking for Two Arguments)
+  {
+    if(Argument_1 != Argument_2)
+    {
+      if(MD5({Secret-Salt} + Argument_1) == MD5({Secret-Salt} + Argument_2))
+        Print "The Flag is cs628a{*******************************}";
+      else
+        Print "Try Harder !";
+    }
+    else
+    {
+      Print "Arguments Should Not Be Same !";
+    }
+  }
+  else
+  {
+    Print "Need Two Arguments.";
+  }
+
+
+1. The code snippet is visible in the webpage which makes it clear that we have to satisfy two if conditions to get the flag.
+2. There can be two approach to solve this problem:
+	a) Find two different arguments such that MD5({Secret-Salt} + Argument_1) == MD5({Secret-Salt} + Argument_2).
+	b) Setting both arguments to be same but bypassing the condition if(Argument_1 != Argument_2). 
+3. I have followed the second approach because the secret salt is unknown to me.
+4. The problem in php is that when concatenating two strings like  echo "secret".array(); and echo "secret".array("x", "y", "z"); will be same, i.e secretArray.
+5. It just acts as if it was just the string “Array”. Therefore, we can get the same string with two different arrays and bypass the equality check.
+6. Therefore, introducing array symbol in the argument bypassed the equality check and the flag is received.
+
+URl: https://cs628a.cse.iitk.ac.in:9012/uzwZfBZQ0g/?p=apps&f=1&arg1[]=FGFG&arg2[]=FGDFG

